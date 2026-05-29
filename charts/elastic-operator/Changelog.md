@@ -2,6 +2,11 @@
 
 ## Chart Versions
 
+### 9.4.1
+- Added HTTP TLS configuration support for Elasticsearch
+- Support for disabling TLS on HTTP endpoint via `elasticsearch.http.tls.selfSignedCertificate.disabled`
+- Allows plain HTTP connections for development/testing environments
+
 ### 9.4.0
 - Added ECK Logstash CRD support for log processing and transformation
 - Added Logstash template (`templates/eks-stack/logstash.yaml`)

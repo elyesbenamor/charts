@@ -26,9 +26,15 @@ spec:
     {{- end }}
   {{- end }}
 {{- end }}
+  http:
+{{- with .http }}
+    {{- if .tls }}
+    tls:
+      {{- .tls | toYaml | nindent 6 }}
+    {{- end }}
+{{- end }}
 {{- with $.Values.ingress.elasticsearch -}}
   {{- if and (eq .enabled true) (eq .className "traefik") }}
-  http:
     service:
       metadata:
         annotations:
